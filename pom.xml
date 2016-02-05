@@ -52,7 +52,7 @@
                 <configuration>
                     <autoVersionSubmodules>true</autoVersionSubmodules>
                     <releaseProfiles>gitrelease</releaseProfiles>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <tagNameFormat>v@{project.version}.RELEASE</tagNameFormat>
                 </configuration>
             </plugin>
             <plugin>
