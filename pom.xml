@@ -153,14 +153,12 @@
                     <plugin>
                         <groupId>com.github.github</groupId>
                         <artifactId>site-maven-plugin</artifactId>
-                        <version>0.7</version>
+                        <version>0.12</version>
                         <configuration>
-                            <description>Official ${project.name} build of the
-                                ${project.version} release</description>
                             <message>Official ${project.name} build</message>
                             <server>github.com</server>
                             <repositoryName>iyzipay-java</repositoryName>
-                            <repositoryOwner>cenkakin</repositoryOwner>
+                            <repositoryOwner>hakanoklay</repositoryOwner>
                         </configuration>
                         <executions>
                             <execution>
