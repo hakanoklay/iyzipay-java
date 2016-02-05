@@ -31,6 +31,17 @@
         </repository>
     </distributionManagement>
 
+    <repositories>
+        <repository>
+            <id>iyzipay-java-mvn-repo</id>
+            <url>https://raw.github.com/hakanoklay/iyzipay-java/mvn-repo/</url>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+            </snapshots>
+        </repository>
+    </repositories>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java-compileSource.version>1.6</java-compileSource.version>
@@ -191,11 +202,12 @@
                             </includes>
                         </configuration>
                         <executions>
+                            <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
                             <execution>
                                 <goals>
                                     <goal>site</goal>
                                 </goals>
-                                <phase>site</phase>
+                                <phase>deploy</phase>
                             </execution>
                         </executions>
                     </plugin>
