@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.iyzipay</groupId>
     <artifactId>iyzipay-java</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.0</version>
+    <version>1.0.12-SNAPSHOT</version>
     <name>iyzipay-java</name>
     <description>iyzipay api java client</description>
 
@@ -19,11 +17,19 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:https://github.com/iyzico/iyzipay-java.git</connection>
-        <developerConnection>scm:git:https://github.com/iyzico/iyzipay-java.git</developerConnection>
-        <url>https://bitbucket.org/iyzico/iyzipay-java</url>
+        <connection>scm:git:https://github.com/hakanoklay/iyzipay-java.git</connection>
+        <developerConnection>scm:git:https://github.com/hakanoklay/iyzipay-java.git</developerConnection>
+        <url>https://github.com/hakanoklay/iyzipay-java</url>
         <tag>HEAD</tag>
     </scm>
+
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${project.build.directory}/mvn-repo</url>
+        </repository>
+    </distributionManagement>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,6 +45,16 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.2</version>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <releaseProfiles>gitrelease</releaseProfiles>
+                    <tagNameFormat>v@{project.version}.RELEASE</tagNameFormat>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -110,4 +126,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
 </project>
